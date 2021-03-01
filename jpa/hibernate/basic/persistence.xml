@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
+             version="2.2">
+    <persistence-unit name="default">
+        <properties>
+            <!-- 접근할 DB 드라이버 -->
+            <property name="javax.persistence.jdbc.driver" value="org.mariadb.jdbc.Driver" />
+            <!-- DB url -->
+            <property name="javax.persistence.jdbc.url" value="jdbc:mariadb://localhost:3306/TEST" />
+            <!-- DB 사용자 아이디 -->
+            <property name="javax.persistence.jdbc.user" value="admin" />
+            <!-- DB 사용자 비밀번호 -->
+            <property name="javax.persistence.jdbc.password" value="1234" />
+
+            <!-- DB 관련 설정 -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MariaDBDialect"/>
+            <property name="hibernate.show_sql" value="true" /> <!-- SQL을 보여주는지 설정-->
+            <property name="hibernate.format_sql" value="true" /> <!-- format에 맞게 보여주는지 설정-->
+            <property name="hibernate.use_sql_comments" value="true" /> <!-- 주석 설정-->
+            <!--
+                <property name="hibernate.hbm2ddl.auto" value="update" />  DB 테이블 자동 생성/수정 설정
+            -->
+        </properties>
+    </persistence-unit>
+</persistence>
